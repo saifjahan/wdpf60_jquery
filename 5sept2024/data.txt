@@ -1,0 +1,3 @@
+this is a text file 
+here we have added multiple  lines 
+we will lad this file using load method 
