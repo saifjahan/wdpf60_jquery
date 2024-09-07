@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h3>entry form</h3>
+    <form action="" id="studentform">
+        <fieldset>
+            <input type="text" name="name" id="name" placeholder="enter name"><br>
+    Gender: <br>
+    Male <input type="radio" name="gender" id="gender" value="male">
+    Female <input type="radio" name="gender" id="gender" value="female"><br>
+    DATA of Birth <br>
+    <input type="date" name="dob" id="dob"><br>
+    <input type="text" name="email" id="email" placeholder="enter email"><br>
+    <input type="text" name="phon" id="phon" placeholder="enter phon"><br>
+    <textarea name="address" id="address"></textarea><br>
+    <input type="button" name="submit" id="submit" value="submit">
+        </fieldset>
+    
+    </form>
+    <div></div>
+    
+<script>
+   $(document).ready(function (){
+    $("div").load("student.php");
+    $("#submit").click(function(){
+        let formdata = $("#studentform").serialize();
+        console.log(formdata);
+        $.post("insert.php",{mydata:formdata},function(data,status){
+            alert(data);
+        })
+        get_student();
+    })
+
+   });
+</script>
+
+</body>
+</html>
