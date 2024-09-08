@@ -34,9 +34,10 @@
         $.post("insert.php",{mydata:formdata},function(data,status){
             alert(data);
         })
-        get_student();
+        //get_student();
+        $("#div").load("student.php");
     })
-
+    
    });
 </script>
 
